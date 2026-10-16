@@ -3,7 +3,7 @@
   "short_name": "BF To-Do",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#06101e",
+  "background_color": "#00ff00",
   "theme_color": "#00ff00",
   "icons": [
     {
