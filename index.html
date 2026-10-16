@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" title="" type="" />
+  <title>BF-To-Do App</title>
+</head>
+
+<body>
+<main>
+  <div class="message">
+    <button onclick="op()" class="bt">X</button>
+    <h2 id="h2"></h2>
+    <button onclick="dele()" type="submit" class="validator">Yes</button>
+  </div>
+ <section id="one" class="no">
+   <div class="icon">📜</div>
+   <h1>BF To-Do List</h1>
+ </section>
+ <section id="two" class="no">
+
+   <div class="head">
+<h1>BF To-Do List</h1>
+   </div>
+      <div class="icon2">📝</div>
+  <input placeholder="Tasks..." type="text" id="inp">
+  <button id="btn" onclick="add()">Add</button>
+  <h4 class="h4">You have <span class="h1"></span> task.</h4>
+  <div id="box">
+    <h3 id="h3">Empty Tasks!</h3>
+  </div>
+ </section>
+</main>
+<script src="script.js" ></script>
+
+</body>
+
+</html>
