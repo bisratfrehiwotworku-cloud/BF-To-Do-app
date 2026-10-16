@@ -1,0 +1,489 @@
+.no{
+  display:none;
+}
+*{
+  margin:0;
+}
+h1{
+  text-align:center;
+  font-size:30px;
+}
+body{
+  background-image:linear-gradient(to bottom,#011D02,#09A70D, #84BD85,#B0DBB1);
+}
+main{
+  border:none;
+  min-width:200px;
+  max-width:800px;
+  height:100vh;
+  margin :0 auto;
+}
+#one{
+  border:none;
+  min-width:200px;
+  max-width:1000px;
+  height:100vh;
+  background-image:linear-gradient(#0C1C0C,#1A6C1D,#7BAF7D ,#1A6C1D,#0C1C0C);
+  margin :0 auto;
+}
+#one .icon{
+  width:200px;
+  height:200px;
+  position:relative;
+  top:190px;
+  left:140px;
+  font-size:60px;
+}
+#one h1{
+  border:5px solid #011D02;
+  width:200px;
+  height:40px;
+  position:relative;
+  top:100px;
+  left:70px;
+  border-radius:20px;
+  border-left:blue;
+  border-right:blue;
+  color: wheat;
+  font-size:20px;
+  font-family:fantasy;
+  padding:5px;
+}
+#two{
+  border:none;
+  min-width:200px;
+  max-width:1000px;
+  height :100vh;
+  background-image:linear-gradient(to bottom,#011D02,#09A70D, #84BD85,#B0DBB1);
+  overflow:auto;
+  margin :0 auto;
+}
+
+#two h1{
+  position:relative;
+  font-size:23px;
+  top:10px;
+  font-family:fantasy;
+  color:wheat;
+}
+#two #h3{
+  position:relative;
+  font-size:25px;
+  top:50px;
+  text-align:center;
+  font-family:fantasy;
+  color:wheat;
+  font-weight:lighter;
+}
+   #item-row{
+     border:2px solid wheat ;
+     min-width:270px;
+     max-width:570px;
+     min-height:40px;
+     position:relative;
+     padding:5px;
+     color: #B0DBB1;
+     background-color:black;
+     border-radius:10px;
+     border-left:transparent;
+     border-right:transparent;
+     margin :10px;
+     top:30px;
+     bottom:120px;
+     font-size:17px;
+     display :flex;
+  flex-direction:row;
+    font-size:34px;
+  gap:5px;
+   }
+#inp,#btn{
+  position:relative;
+  top:70px;
+  left:50px;
+   }
+#inp{
+  border:1px solid black;
+  width:170px;
+  height :30px;
+  border-radius:20px;
+  padding-left:15px;
+}
+#btn{
+  border:1px solid black ;
+  width:80px;
+  height :35px;
+  border-radius:20px;
+  background-color:black;
+  color :#4BFF4F;
+  font-size:15px;
+  font-weight:bold;
+  font-family:fantasy;
+}
+#two .head{
+  border:5px solid #071907;
+  width:250px;
+  height:60px;
+  border-bottom-left-radius:60px;
+  background-color:#071907;
+  position:relative;
+  top:0;
+  left:100px;
+}
+.bo{
+  border:1px solid transparent;
+  width:50px;
+  height:60px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding-right :2px;
+}
+#two  .icon2{
+  width:50px;
+  height:50px;
+  position:absolute;
+  top:10px;
+  left:25px;
+  font-size:35px;
+}
+#two  #box{
+  border:none;
+  width:300px;
+  min-height:250px;
+  max-height:400px;
+  position:relative;
+  top:130px;
+  left:25px;
+  border-radius:15px;
+  backdrop-filter:blurr(10px);
+  overflow:auto;
+  box-shadow:1px 1px 20px black;
+ 
+}
+#text{
+  border:none;
+  min-width:230px;
+  min-height:40px;
+  height :auto;
+  padding:2px;
+  border-radius:5px;
+  font-size:17px;
+}
+#delo{
+  border:1px solid red;
+  width:25px;
+  height:25px;
+  background-color: transparent;
+  color :pink;
+  font-weight:bold;
+  font-size:14px;
+  border-radius:10px;
+}
+#delo:active{
+  color:pink;
+  background-color:grey;
+}
+.delo{
+  border:1px solid transparent;
+  width:25px;
+  height:25px;
+  background-color: transparent;
+  color :brown;
+  font-weight:bold;
+  font-size:17px;
+  border-radius:10px;
+}
+.delo:active{
+  color:pink;
+  background-color:grey;
+}
+.message{
+  border:none;
+  min-width:280px;
+  max-width:300px; 
+  min-height :120px;
+  height :auto;
+  border-radius:20px;
+  backdrop-filter:blur(80px);
+  z-index:999;
+  position:absolute;
+  top:200px;
+  left:30px;
+  padding:5px;
+  opacity:0;
+  box-shadow:1px 1px 40px red;
+  z-index:-2;
+}
+.bt{
+  border:transparent;
+  width:30px;
+  height :30px;
+  border-radius:10px;
+  position:absolute;
+  top:5px;
+  right:5px; 
+  color: wheat;
+  font-weight:bold;
+  font-size:20px;
+  background:transparent;
+}
+.bt:active{
+  background-color:grey;
+  color:blue;
+}
+#h2{
+  position:relative;
+  top:30px;
+  left:20px;
+  color:pink;
+  font-size:17px;
+  border:none;
+  max-width:240px;
+  font-weight:300;
+}
+#two .h4{
+  border:none;
+  position:relative;
+  top:100px;
+  left:40px;
+  color: wheat;
+  font-size:19px;
+  max-width:300px;
+  font-weight:300;
+}
+.validator{
+  border:none;
+  width:55px;
+  height:30px;
+  position:relative;
+  top:60px;
+  left:210px;
+  border-radius:5px;
+  background-color:black;
+  color: wheat;
+}
+
+@media (min-width:480px){
+  #one{
+    background-image:linear-gradient(to bottom,#011D02,#09A70D, #84BD85,#B0DBB1); 
+  }
+  #one .icon{
+    position:relative;
+    top:410px;
+    left:260px;
+    font-size:120px;
+  
+  }
+  #one h1{
+    border:7px solid black;
+    position:relative;
+    width:400px;
+    height :80px;
+    top:480px;
+    left:140px;
+    font-size:40px;
+    border-radius:25px;
+    border-right: transparent;
+    border-left: transparent;
+  }
+  /*two*/
+  #two .head{
+  border:5px solid #071907;
+  width:530px;
+  height:100px;
+  border-bottom-left-radius:90px;
+  border-top-right-radius:20px; 
+  border-bottom-right-radius:20px; 
+  background-color:#071907;
+  position:relative;
+  top:0;
+  left:260px;
+}
+  #two h1{
+  position:relative;
+  font-size:43px;
+  top:10px;
+  font-family:fantasy;
+  color:wheat;
+}
+#two #h3{
+  position:relative;
+  font-size:45px;
+  top:50px;
+  text-align:center;
+  font-family:fantasy;
+  color: wheat;
+  font-weight:lighter;
+}
+#inp,#btn{
+  position:relative;
+  top:70px;
+  left:150px;
+   }
+#inp{
+  border:1px solid black;
+  width:310px;
+  height :80px;
+  border-radius:60px;
+  padding-left:30px;
+  font-size:30px;
+}
+#btn{
+  border:1px solid black ;
+  width:140px;
+  height :85px;
+  border-radius:60px;
+  background-color:black;
+  color :#4BFF4F;
+  font-size:30px;
+  font-weight:bold;
+  font-family:fantasy;
+}
+#two  .icon2{
+  width:50px;
+  height:50px;
+  position:relative;
+  top:10px;
+  left:25px;
+  font-size:35px;
+}
+#two  #box{
+  border:none;
+  width:650px;
+  min-height:450px;
+  max-height:850px;
+  position:relative;
+  top:190px;
+  left:45px;
+  border-radius:25px;
+  backdrop-filter:blurr(10px);
+  overflow:auto;
+  box-shadow:1px 1px 20px black;
+ 
+}
+   #item-row{
+     border:4px solid wheat ;
+     width:550px;
+     min-height:110px;
+     position:relative;
+     padding:5px;
+     color: #B0DBB1;
+     background-color:black;
+     border-radius:20px;
+     border-left:transparent;
+     border-right:transparent;
+     margin :10px;
+     top:30px;
+     bottom:120px;
+     display :flex;
+     left:25px;
+  flex-direction:row;
+  
+  gap:5px;
+   }
+   #text{
+  border:1px solid transparent;
+  width:500px;
+  min-height:110px;
+  height :auto;
+  padding:2px;
+  border-radius:5px;
+  font-size:37px;
+}
+#two  .icon2{
+  width:50px;
+  height:50px;
+  position:relative;
+  top:-100px;
+  left:35px;
+  font-size:85px;
+
+}
+#delo{
+  border:1px solid red;
+  width:45px;
+  height:55px;
+  background-color: transparent;
+  color :pink;
+  font-weight:bold;
+  font-size:37px;
+  border-radius:20px;
+}
+#delo:active{
+  color:pink;
+  background-color:grey;
+}
+.delo{
+  border:1px solid transparent;
+  width:45px;
+  height:50px;
+  background-color: transparent;
+  color :brown;
+  font-weight:bold;
+  font-size:38px;
+  border-radius:10px;
+}
+#h2{
+  position:relative;
+  
+  top:70px;
+  left:20px;
+  color:pink;
+  font-size:37px;
+  border:none;
+  min-width:480px;
+  font-weight:300;
+}
+#two .h4{
+  border:none;
+  min-width :500px;
+  position:relative;
+  top:150px;
+  left:80px;
+  color: wheat;
+  font-size:40px;
+  max-width:300px;
+  font-weight:400;
+}
+.message{
+  border:none;
+  min-width:550px; 
+  min-height :320px;
+  height :auto;
+  border-radius:40px;
+  backdrop-filter:blur(80px);
+  z-index:999;
+  position:absolute;
+  top:350px;
+  left:80px;
+  padding:5px;
+  opacity:0;
+  box-shadow:1px 1px 40px red;
+  z-index:-2;
+}
+.bt{
+  border:transparent;
+  width:30px;
+  height :30px;
+  border-radius:20px;
+  position:absolute;
+  top:10px;
+  right:29px; 
+  color: wheat;
+  font-weight:bold;
+  font-size:40px;
+  background:transparent;
+}
+.validator{
+  border:1px solid white;
+  width:115px;
+  height:60px;
+  position:relative;
+  top:90px;
+  left:410px;
+  border-radius:15px;
+  background-color:black;
+  color: wheat;
+  font-size:30px;
+}
+  }
