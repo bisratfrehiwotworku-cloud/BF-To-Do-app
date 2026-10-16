@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css" title="" type="" />
+  <!-- Calendar Icon for Browser Tab -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%%3E%3Ctext y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+
+<!-- PWA Manifest Link -->
+<link rel="manifest" href="manifest.json">
   <title>BF-To-Do App</title>
 </head>
 
@@ -16,7 +21,7 @@
     <button onclick="dele()" type="submit" class="validator">Yes</button>
   </div>
  <section id="one" class="no">
-   <div class="icon">📜</div>
+<div class="icon">📋</div>
    <h1>BF To-Do List</h1>
  </section>
  <section id="two" class="no">
@@ -27,7 +32,7 @@
       <div class="icon2">📝</div>
   <input placeholder="Tasks..." type="text" id="inp">
   <button id="btn" onclick="add()">Add</button>
-  <h4 class="h4">You have <span class="h1"></span> task.</h4>
+  <h4 class="h4">You have <span class="h1"></span> <span class="task">task.</span></h4>
   <div id="box">
     <h3 id="h3">Empty Tasks!</h3>
   </div>
