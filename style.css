@@ -27,19 +27,20 @@ main{
   margin :0 auto;
 }
 #one .icon{
-  width:200px;
-  height:200px;
+  width:100px;
+  height:100px;
   position:relative;
   top:190px;
-  left:140px;
+  left:130px;
   font-size:60px;
+  background:transparent;
 }
 #one h1{
   border:5px solid #011D02;
   width:200px;
   height:40px;
   position:relative;
-  top:100px;
+  top:210px;
   left:70px;
   border-radius:20px;
   border-left:blue;
@@ -268,11 +269,12 @@ main{
     background-image:linear-gradient(to bottom,#011D02,#09A70D, #84BD85,#B0DBB1); 
   }
   #one .icon{
+    width:200px;
+    height :200px;
     position:relative;
     top:410px;
-    left:260px;
-    font-size:120px;
-  
+    left:250px;
+    font-size:210px;
   }
   #one h1{
     border:7px solid black;
