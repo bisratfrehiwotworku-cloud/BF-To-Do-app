@@ -1,3 +1,11 @@
+if ('service worker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered!', reg))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
+
 window.addEventListener('DOMContentLoaded',()=>{
   let saving = localStorage.getItem('text')||`<div id="h3">Empty Task!</div>`;
   let box = document.getElementById('box');
@@ -72,10 +80,14 @@ function add(){
   let item = document.querySelectorAll('.item');
   let total =item.length;
   let h1 = document.querySelector('.h1');
+    let task = document.querySelector('.task');
+  if(total>1){
+    task.textContent='tasks.';
+  }
   h1.innerText=total;
   console.log(h1.innerText)
   localStorage.setItem('h1',total)
- // text();
+
   update();
   
 }
@@ -138,4 +150,4 @@ function editor(btn){
      let saving = localStorage.setItem('text',box.innerHTML);
 
    });
-  }
+}
