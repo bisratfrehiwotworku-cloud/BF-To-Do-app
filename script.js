@@ -1,10 +1,15 @@
-if ('service worker' in navigator) {
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registered!', reg))
-      .catch(err => console.error('Service Worker registration failed:', err));
+      .then((registration) => {
+        console.log('Service Worker registered successfully:', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed:', error);
+      });
   });
 }
+
 
 window.addEventListener('DOMContentLoaded',()=>{
   let saving = localStorage.getItem('text')||`<div id="h3">Empty Task!</div>`;
