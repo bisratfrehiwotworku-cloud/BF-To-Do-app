@@ -1,7 +1,7 @@
 {
   "name": "BF To-Do List",
   "short_name": "BF To-Do",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#06101e",
   "theme_color": "#00ff00",
