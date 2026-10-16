@@ -1,26 +1,14 @@
-const CACHE_NAME = 'bf-todo-v1';
-const ASSETS = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/manifest.json'
-];
-
-// Install event - cache core assets
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    })
-  );
+// Minimal Service Worker to satisfy PWA installation requirements
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
 });
 
-// Fetch event - serve from cache or network
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request);
-    })
-  );
+self.addEventListener('activate', (event) => {
+  event.waitUntil(self.clients.claim());
+});
+
+// Chrome strictly requires a fetch handler to allow home-screen installation
+self.addEventListener('fetch', (event) => {
+  // Leave empty or pass through network requests
+  event.respondWith(fetch(event.request));
 });
