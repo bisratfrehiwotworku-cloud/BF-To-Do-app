@@ -34,6 +34,7 @@ main{
   left:130px;
   font-size:60px;
   background:transparent;
+  border-radius:20px;
 }
 #one h1{
   border:5px solid #011D02;
