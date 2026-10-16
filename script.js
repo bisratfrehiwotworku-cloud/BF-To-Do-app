@@ -156,3 +156,50 @@ function editor(btn){
 
    });
 }
+// Create a visual install button on the screen dynamically
+const installBtn = document.createElement('button');
+installBtn.innerText = '📲 Install BF To-Do App';
+installBtn.style.position = 'fixed';
+installBtn.style.bottom = '20px';
+installBtn.style.left = '50%';
+installBtn.style.transform = 'translateX(-50%)';
+installBtn.style.padding = '12px 24px';
+installBtn.style.background = '#00ff00';
+installBtn.style.color = '#000';
+installBtn.style.fontWeight = 'bold';
+installBtn.style.border = 'none';
+installBtn.style.borderRadius = '25px';
+installBtn.style.zIndex = '9999';
+installBtn.style.display = 'none'; // Hidden by default
+document.body.appendChild(installBtn);
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome from showing its default prompt immediately
+  e.preventDefault();
+  // Save the event so it can be triggered later
+  deferredPrompt = e;
+  // Show our custom install button on the screen
+  installBtn.style.display = 'block';
+});
+
+installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    // Show the native browser install banner
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    // We used the prompt, clear it out
+    deferredPrompt = null;
+    // Hide our custom button again
+    installBtn.style.display = 'none';
+  }
+});
+
+window.addEventListener('appinstalled', () => {
+  console.log('PWA was installed successfully!');
+  installBtn.style.display = 'none';
+});
+
