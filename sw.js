@@ -1,4 +1,6 @@
-// Minimal Service Worker to satisfy PWA installation requirements
+// Change this version (v1 -> v2) whenever you update HTML/CSS/JS!
+const VERSION = 'v1.0.1';
+
 self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
@@ -7,8 +9,11 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(self.clients.claim());
 });
 
-// Chrome strictly requires a fetch handler to allow home-screen installation
+// Network-first strategy: Fetch fresh code from GitHub!
 self.addEventListener('fetch', (event) => {
-  // Leave empty or pass through network requests
-  event.respondWith(fetch(event.request));
+  event.respondWith(
+    fetch(event.request, { cache: 'no-cache' }).catch(() => {
+      return caches.match(event.request);
+    })
+  );
 });
