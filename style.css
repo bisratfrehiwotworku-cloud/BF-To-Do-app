@@ -56,7 +56,7 @@ main{
   min-width:200px;
   max-width:1000px;
   height :100vh;
-  background-color: yellow;
+  background-image:linear-gradient(to bottom,#011D02,#09A70D, #84BD85,#B0DBB1);
   overflow:auto;
   margin :0 auto;
 }
