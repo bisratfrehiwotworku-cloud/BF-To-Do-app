@@ -1,11 +1,13 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then((reg) => console.log('SW registered!', reg.scope))
+    navigator.serviceWorker.register('./sw.js') // 👈 Added dot: './sw.js'
+      .then((reg) => {
+        console.log('SW registered!', reg.scope);
+        reg.update(); // 👈 Checks GitHub for new updates on launch!
+      })
       .catch((err) => console.error('SW registration failed!', err));
   });
 }
-
 
 
 window.addEventListener('DOMContentLoaded',()=>{
