@@ -56,7 +56,7 @@ main{
   min-width:200px;
   max-width:1000px;
   height :100vh;
-  background-color:red;
+  background-color: yellow;
   overflow:auto;
   margin :0 auto;
 }
