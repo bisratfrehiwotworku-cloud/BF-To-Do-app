@@ -1,11 +1,20 @@
-if ('service worker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registered!', reg))
-      .catch(err => console.error('Service Worker registration failed:', err));
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    const registration =
+      await navigator.serviceWorker.register("./sw.js");
+
+    await registration.update();
+
+    let refreshing = false;
+
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (!refreshing) {
+        refreshing = true;
+        window.location.reload();
+      }
+    });
   });
 }
-
 window.addEventListener('DOMContentLoaded',()=>{
   let hh1 = document.querySelector('.hh1');
 let saveed = localStorage.getItem('hh1' || 'no task.');
