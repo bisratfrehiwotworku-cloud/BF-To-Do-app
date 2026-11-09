@@ -15,27 +15,89 @@
 
 <body>
 <main>
-  <div class="message">
+
+    <div class="user">
+
+    <p class="p">Welcome to BF-TO-Do-List App, Put your name here to continue!</p>
+    <input type="text" id="inpp" placeholder="Your name....">
+
+    <button onclick="username()" class="continue">Continue</button>
+
+  </div>
+  
+    <div class="message">
     <button onclick="op()" class="bt">X</button>
     <h2 id="h2"></h2>
     <button onclick="dele()" type="submit" class="validator">Yes</button>
+    </div>
+    
+  <div class="tboxin">
+<div class="boxin"></div>
+  <div class="message">
+    <button onclick="op()" class="bt">X</button>
+    <h2 id="h2"></h2>
+   
   </div>
- <section id="one" class="no">
+</div>
+
+ <section id="one" class="no active">
 <img src="icon.png" class="icon" alt="icon.png">
-   <h1>BF To-Do List</h1>
+   <h1 class="yes">BF To-Do List</h1>
+
  </section>
  <section id="two" class="no">
 
    <div class="head">
 <h1>BF To-Do List</h1>
+<div class="bar">
+   <div class="menuu">
+     <span class="so"></span>
+     <span class="so"></span>
+     <span class="so"></span>
    </div>
+   <div class="options">
+     <div class="opin">
+     <div class="op" onclick="ser()">🔍 Search</div>
+     <div class="op" onclick="alll()">🧹Clear all</div>
+     <div class="op" onclick="clickpage('three')">🧾 App info</div>
+     <div class="op" onclick="change()">✏️ Change Name</div>
+     </div>
+   </div>
+</div>
+
+   </div>
+   <div class="serbox"><input type="text" placeholder="Search tasks..." id="inp2" class="inpp2"> 
+   <button class="search" onclick="x()">x</button>
+   </div>
+
       <div class="icon2">📝</div>
+
+      <div class="bhead">
+        <div class="wholecup">
+        <div class="cup"></div>
+        <div class="upcup"></div>
+        <div class="handcup"></div>
+        </div>
+
+        <h2 class="h2">Plan your day! ✨</h2>
+      </div>
+
   <input placeholder="Tasks..." type="text" id="inp">
   <button id="btn" onclick="add()">Add</button>
-  <h4 class="h4">You have <span class="h1"></span> <span class="task">task.</span></h4>
+  <h4 class="h4"><span class="users"></span>You have <span class="hh1"></span> <span class="task">task.</span></h4>
   <div id="box">
     <h3 id="h3">Empty Tasks!</h3>
   </div>
+  
+ </section>
+ <section id="three" class="no">
+   <div class="back" onclick="clickpage('two')">🔰</div>
+   <h1 class="th1">BF-TO-DO List</h1>
+   <p class="thp">⚡ BF To‑Do is a functional, responsive task-management app. Users can create, edit, and delete tasks, and their changes are saved automatically. It helps users organize their time and reduce paper use.</p>
+   <h2 class="th2">Before</h2>
+   <img src="load.jpg" class="before" alt="" />
+   <h2 class="th2">After</h2>
+   <img src="solved.jpg" class="before" alt="" />
  </section>
 </main>
 <script src="script.js" ></script>
