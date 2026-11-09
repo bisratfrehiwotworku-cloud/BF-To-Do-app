@@ -1,56 +1,45 @@
-const CACHE_NAME = 'bf-todo-v1.0.3';
+const CACHE = "bf-todo-v4";
 
-// 1. Save these files to phone memory on install
-const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './script.js',
-  './manifest.json'
+const FILES = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./manifest.json"
 ];
 
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    })
+    caches.open(CACHE).then(cache => cache.addAll(FILES))
   );
+  self.skipWaiting();
 });
 
-// 2. Clear old caches when version updates
-self.addEventListener('activate', (event) => {
+self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    })
+    caches.keys().then(keys =>
+      Promise.all(
+        keys
+          .filter(key => key !== CACHE)
+          .map(key => caches.delete(key))
+      )
+    )
   );
   self.clients.claim();
 });
 
-// 3. Network First, Fallback to Cache when Offline
-self.addEventListener('fetch', (event) => {
+self.addEventListener("fetch", event => {
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
     fetch(event.request)
-      .then((networkResponse) => {
-        // If online, update cache with fresh files
-        if (networkResponse && networkResponse.status === 200) {
-          const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        }
-        return networkResponse;
+      .then(response => {
+        const copy = response.clone();
+        caches.open(CACHE).then(cache =>
+          cache.put(event.request, copy)
+        );
+        return response;
       })
-      .catch(() => {
-        // IF OFFLINE: Return saved files from cache!
-        return caches.match(event.request).then((cachedResponse) => {
-          return cachedResponse || caches.match('./index.html') || caches.match('./');
-        });
-      })
+      .catch(() => caches.match(event.request))
   );
 });
