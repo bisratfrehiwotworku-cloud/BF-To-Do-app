@@ -28,7 +28,8 @@
     <div class="message">
     <button onclick="op()" class="bt">X</button>
     <h2 id="h2"></h2>
-    <button onclick="dele()" type="submit" class="validator">Yes</button>
+    <button id="clear" onclick="alll()">Delete all</button>
+    <button onclick="dele()" type="submit" class="validator">Remove</button>
     </div>
     
   <div class="tboxin">
@@ -58,7 +59,7 @@
    <div class="options">
      <div class="opin">
      <div class="op" onclick="ser()">🔍 Search</div>
-     <div class="op" onclick="alll()">🧹Clear all</div>
+     <div class="op" onclick="checkx()">🧹Delete all</div>
      <div class="op" onclick="clickpage('three')">🧾 App info</div>
      <div class="op" onclick="change()">✏️ Change Name</div>
      </div>
@@ -66,19 +67,30 @@
 </div>
 
    </div>
-   <div class="serbox"><input type="text" placeholder="Search tasks..." id="inp2" class="inpp2"> 
+   <div class="serbox"><input onchange="search()" type="text" placeholder="Search tasks..." id="inp2" class="inpp2"> 
    <button class="search" onclick="x()">x</button>
    </div>
 
       <div class="icon2">📝</div>
-
+  <div class="wcup">
+ <div class="smoke">
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+   <span class="sm"></span>
+ </div>
       <div class="bhead">
         <div class="wholecup">
         <div class="cup"></div>
         <div class="upcup"></div>
         <div class="handcup"></div>
         </div>
-
+  </div>
         <h2 class="h2">Plan your day! ✨</h2>
       </div>
 
