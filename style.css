@@ -180,6 +180,76 @@ border-bottom-right-radius:60px;
   border-right:transparent;
   
 }
+.wcup{
+  border:none;
+  width:60px;
+  height:70px;
+  position:relative;
+  top:-20px;
+  left:20px;
+}
+/*smoke*/
+.smoke{
+  border:none;
+  width:30px;
+  height:50px;
+  position:relative;
+  top:-8px;
+  left:20px;
+  display:flex;
+  flex-direction:row;
+  z-index:999;
+  gap:0.4px;
+}
+.sm{
+  border:none;
+  width:1px;
+  height:20px;
+  background-color:grey;
+  filter:blur(2px);
+  position:relative;
+  top:30px;
+  left:6px;
+  border-radius:20px;
+  animation:smoke 3s infinite;
+  animation-timing-function:linear;
+  
+}
+@keyframes smoke{
+  0%{
+    opacity:1;
+    transform:translateY(0);
+  }
+  30% {
+  opacity: 0.3;
+  transform: translateY(-10px);
+ }
+ 60% {
+  opacity: 0.6;
+  transform: translateY(-25px);
+}
+100% {
+  opacity:0;
+  transform: translateY(-30px);
+}
+}
+.smoke span:nth-child(1){
+  animation-delay:2s;
+}
+.smoke span:nth-child(3) {
+  animation-delay: 1s;
+}
+.smoke span:nth-child(6) {
+  animation-delay: 3s;
+}
+.smoke span:nth-child(7) {
+  animation-delay: 1s;
+}
+.smoke span:nth-child(9) {
+  animation-delay: 2s;
+}
+
+/**/
 .label{
   border:1px soli white;
   min-width:28px;
@@ -228,18 +298,21 @@ left:20px;
   height:30px;
   border-bottom-left-radius:50px;
   border-bottom-right-radius:50px;
+  position :relative;
+  top:-33px;
+  left:-10px;
   background-color:wheat;
   z-index:2;
 }
 .upcup{
-border:1px solid grey;
+border:1px solid #484342;
 width:24px;
 height:5px;
 border-radius:50%;
 position:relative;
-top:-35px;
-background-color:grey;
-left:0;
+top:-69px;
+background-color:#484342;
+left:-10px;
 z-index:2;
 }
 .handcup{
@@ -248,19 +321,37 @@ width:10px;
 height:15px;
 border-radius:50%;
 position:relative;
-left:18px;
-top:-36px;
+left:10px;
+top:-69px;
 border-left-color:transparent ;
 }
 .h2{
+  border:none;
+  width:250px;
   text-align:right;
   color:white;
   font-size:20px;
   font-weight:100;
-  color:yellow;
   position:relative;
-  left:40px;
-  top:15px;
+  color:yellow;
+  left:10px;
+  top:-65px;
+}
+#clear{
+border:1px solid black;
+width:85px;
+height:30px;
+border-radius:10px;
+position:absolute;
+color:red;
+left:28px;
+padding:5px;
+padding-left:10px;
+background-color:black;
+box-shadow:0.5px 0.5px red;
+backdrop-filter:blurr(10px);
+top:126px;
+display:none;
 }
 .serbox{
   border: 1px solid none;
@@ -346,12 +437,17 @@ z-index: 2;
   border:1px solid black ;
   width:80px;
   height :35px;
-  border-radius:20px;
-  background-color:black;
-  color :#4BFF4F;
+  border-radius:10px;
+  background-color:transparent;
+  color :white;
+  backdrop-filter:blurr(10px);
   font-size:15px;
   font-weight:bold;
   font-family:fantasy;
+  box-shadow:1px 1px 3px white;
+}
+#btn:hover{
+  box-shadow:1px 1px 3px black;
 }
 #two .head{
   border:5px solid #071907;
@@ -384,37 +480,43 @@ z-index: 2;
   font-size:35px;
 }
 #two  #box{
-  border: none;
+  border:none;
   width:300px;
+  border:1px solid white;
   min-height:250px;
   max-height:370px;
   position:relative;
   top:90px;
   left:25px;
-  border-radius:15px;
+  border-left:transparent;
+  border-right:transparent;
+  border-radius:20px;
   backdrop-filter:blurr(10px);
   overflow:auto;
+  box-shadow:1px 3px / 1px  red;
+  /*
   box-shadow:1px 1px 20px black;
   animation:boxani 5s infinite ease alternate;
+  */
 }
 @keyframes boxani{
   0%{
-    box-shadow:1px 1px 20px #00D8FF;
+    box-shadow:1px 1px 20px #6EFF9B;
   }
   20% {
-  box-shadow: 1px 1px 20px red;
+  box-shadow: 1px 1px 20px #0FCE4B;
   }
   40% {
   box-shadow: 1px 1px 20px grey;
  }
  60% {
-  box-shadow: 1px 1px 20px orange;
+  box-shadow: 1px 1px 20px #0F4420;
  }
  80% {
-  box-shadow: 1px 1px 20px black;
+  box-shadow: 1px 1px 20px #1B3924;
  }
  100% {
-  box-shadow: 1px 1px 20px yellow;
+  box-shadow: 1px 1px 20px #90BD9E;
  }
 }
 .users{
@@ -596,14 +698,17 @@ border-bottom-color:transparent;
 }
 .validator{
   border:none;
-  width:55px;
+  width:80px;
   height:30px;
   position:relative;
   top:60px;
-  left:210px;
-  border-radius:5px;
+  left:180px;
+  padding:5px;
+  padding-left:10px;
+  border-radius:10px;
   background-color:black;
-  color: wheat;
+  box-shadow:0.5px 0.5px red;
+  color:#ff4d4d;
 }
 /*App info*/
 #three{
@@ -716,32 +821,43 @@ border-bottom-left-radius:60px;
 border-bottom-right-radius:60px;
 }
    #two #box {
-  border: none;
+  border:1px solid white;
   width: 300px;
   min-height: 250px;
   max-height: 370px;
   position: relative;
   top: 90px;
   left: 25px;
-  border-radius: 15px;
-  backdrop-filter: blurr(10px);
-  overflow: auto;
-  box-shadow: 1px 1px 20px black;
-  animation: boxani 5s infinite ease alternate;
+  border-left:transparent;
+border-right:transparent;
+border-radius:25px;
+backdrop-filter:blurr(10px);
+overflow:auto;
+box-shadow:1px 3px / 1px red;
+/*
+  box-shadow:1px 1px 20px black;
+  animation:boxani 5s infinite ease alternate;
+  */
+  
 }
 #two #box {
-  border: none;
+  border:1px solid white;
   width: 320px;
   min-height: 250px;
   max-height: 370px;
   position: relative;
   top: 90px;
   left: 30px;
-  border-radius: 15px;
-  backdrop-filter: blurr(10px);
-  overflow: auto;
-  box-shadow: 1px 1px 20px black;
-  animation: boxani 5s infinite ease alternate;
+  border-left:transparent;
+border-right:transparent;
+border-radius:30px;
+backdrop-filter:blurr(10px);
+overflow:auto;
+box-shadow:1px 3px / 1px red;
+/*
+  box-shadow:1px 1px 20px black;
+  animation:boxani 5s infinite ease alternate;
+  */
 }
 .message{
   position:absolute;
@@ -778,6 +894,23 @@ border-bottom-right-radius:60px;
 }
  }
 @media (min-width:480px){
+  #clear{
+  border: 1px solid black;
+  width:140px;
+  height: 45px;
+  border-radius: 15px;
+  position: absolute;
+  color: red;
+  left: 48px;
+  padding: 5px;
+  font-size:20px;
+  padding-left: 20px;
+  background-color: black;
+  box-shadow: 0.5px 0.5px red;
+  backdrop-filter: blurr(10px);
+  top: 246px;
+  display: none;
+}
   .serbox{
   border: 1px solid none;
   width: 280px;
@@ -913,17 +1046,23 @@ z-index: 2;
 }
 
 #two  #box{
-  border:none;
+  border:1px solid white;
   width:630px;
   min-height:450px;
   max-height:850px;
   position:relative;
   top:195px;
   left:65px;
-  border-radius:25px;
-  backdrop-filter:blurr(10px);
-  overflow:auto;
+  border-left:transparent;
+border-right:transparent;
+border-radius:15px;
+backdrop-filter:blurr(10px);
+overflow:auto;
+box-shadow:1px 3px / 1px red;
+/*
   box-shadow:1px 1px 20px black;
+  animation:boxani 5s infinite ease alternate;
+  */
   
  
 }
@@ -1031,18 +1170,23 @@ z-index: 2;
   font-size:40px;
   background:transparent;
 }
-.validator{
-  border:1px solid white;
-  width:115px;
-  height:60px;
-  position:relative;
-  top:90px;
-  left:410px;
-  border-radius:15px;
-  background-color:black;
-  color: wheat;
-  font-size:30px;
-}
+  .validator {
+    border: 1px solid black;
+    width: 140px;
+    height: 45px;
+    border-radius: 15px;
+    position: absolute;
+    color: red;
+    left: 58px;
+    padding: 5px;
+    font-size: 20px;
+    padding-left: 20px;
+    background-color: black;
+    box-shadow: 0.5px 0.5px red;
+    backdrop-filter: blurr(10px);
+    top: 256px;
+    display: none;
+  }
 .menuu{
   width:55px;
   height:110px;
