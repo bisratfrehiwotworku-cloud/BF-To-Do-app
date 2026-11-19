@@ -450,9 +450,7 @@ message.style.height = '80px';
 message.style.boxShadow = '1px 1px 50px red';
 message.style.display ='block';
 message.style.opacity = 1;
-//message.style.position='relative';
 message.style.top='500px';
-//message.style.backgroundColor='green';
 message.style.zIndex =999;
 options.style.zIndex =990;
 
