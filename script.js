@@ -356,6 +356,7 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+let isDark = localStorage.getItem('isDark') === 'true';
 window.addEventListener('DOMContentLoaded',()=>{
   let hh1 = document.querySelector('.hh1');
 let saveed = localStorage.getItem('hh1' || 'no task.');
@@ -422,6 +423,7 @@ function update(){
     users.textContent=one;
     user.style.opacity=two;
     user.style.zIndex=three;
+    applyTheme();
 }
    
 function username(){
@@ -719,6 +721,63 @@ function x(){
   serbox.style.display='none';
   input.value='';
 }
+
+function applyTheme() {
+  let toggle = document.getElementById('toggle');
+  let item = document.querySelectorAll('.item');
+  const options = document.querySelector('.opin');
+  const head = document.querySelector('.head');
+  const message = document.querySelector('.message');
+  const user = document.querySelector('.user');
+  const menuu = document.querySelector('.menuu');
+  const th2 = document.querySelectorAll('.th2');
+  const so = document.querySelectorAll('.so');
+  const op = document.querySelectorAll('.op');
+
+  toggle.style.width = '90px';
+  toggle.style.borderRadius = '30px';
+
+  if (isDark === true) {
+    document.body.style.background = 'linear-gradient(to bottom, #000000, #4D4366)';
+    options.style.background = 'linear-gradient(to bottom right, #000000 20%, #4D4366)';
+    head.style.backgroundColor = 'black';
+    toggle.style.boxShadow = '1px 1px 5px white';
+    message.style.backgroundColor = '#4D4366';
+    th2.forEach(t => t.style.color = 'white');
+    user.style.backgroundColor = '#1C1825';
+    menuu.style.background = '#4D4366';
+    op.forEach(p => p.style.color = 'white');
+    so.forEach(s => s.style.backgroundColor = 'white');
+    head.style.border = '5px solid black';
+    item.forEach(el => el.style.background = '#42445A');
+    toggle.textContent = 'Day 🌕';
+  } else {
+    document.body.style.background = 'linear-gradient(to bottom, #011D02 5%, #09A70D, #84BD85, #B0DBB1)';
+    op.forEach(p => p.style.color = 'black');
+    th2.forEach(t => t.style.color = 'black');
+    message.style.backgroundColor = 'green';
+    user.style.backgroundColor = '#122C1B';
+    menuu.style.background = 'linear-gradient(to bottom right, green 20%, #9BE1C3, white)';
+    so.forEach(s => s.style.backgroundColor = 'black');
+    head.style.border = '5px solid #071907';
+    head.style.backgroundColor = '#071907';
+    toggle.style.boxShadow = '1px 1px 3px black';
+    options.style.background = 'linear-gradient(to bottom right, #197A22 60%, #9BE1C3, white)';
+    item.forEach(el => el.style.background = 'black');
+    toggle.textContent = 'Night 🌒';
+  }
+}
+
+// 3. Button click handler: toggles isDark, saves it, and applies styles
+function theme() {
+  isDark = !isDark;
+  localStorage.setItem('isDark', isDark);
+  applyTheme();
+}
+
+// 4. Run immediately when the page loads
+applyTheme();
+    
 //localStorage.clear()
 
 //---------
