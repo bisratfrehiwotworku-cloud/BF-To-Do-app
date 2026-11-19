@@ -264,9 +264,8 @@ border-bottom-right-radius:60px;
   background-color:#BDBFBE;
 }
 .so{
-border:2px solid black;
-width:2px;
-height:2px;
+width:6px;
+height:6px;
 margin:1px;
 border-radius:50%;
 background-color: black;
